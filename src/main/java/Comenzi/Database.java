@@ -113,24 +113,29 @@ public class Database {
         return restult;
     }
 
-    public List<StreamInfo> selectUserStreams(List<Integer> streamerIds, int userId, int streamType, boolean listened) {
+    public List<StreamInfo> selectUserStreams(List<Integer> listenedStreamerIds, int userId, int streamType, boolean listened) {
         List<StreamInfo> selectedStreams = new ArrayList<>();
         List<Integer> userStreams = getUser(userId).getStreams();
-        // selectare de stream-uri nevizualizate
+        // select streams based on whether they are listened or not
         for (Stream stream : streams) {
             boolean condition = listened == userStreams.contains(stream.getId());
-
-            if (streamType == stream.getStreamType() && condition && streamerIds.contains(stream.getStreamerId())) {
+            if (streamType == stream.getStreamType() && condition && listenedStreamerIds.contains(stream.getStreamerId())) {
                 Streamer streamer = getStreamer(stream.getStreamerId());
                 selectedStreams.add(new StreamInfo(streamer, stream));
             }
         }
-        return selectedStreams;
+
+        // sort the selected streams based on the number of streams
+        selectedStreams.sort((s1, s2) ->
+                Long.compare(s2.getStream().getNoOfStreams(), s1.getStream().getNoOfStreams()));
+
+        // select the top 5 streams
+        return selectedStreams.subList(0, Math.min(5, selectedStreams.size()));
     }
 
-    public List<Streamer> selectListenedStreamers(int userId) {
+    public List<Integer> selectListenedStreamers(int userId) {
         List<Integer> userStreams = getUser(userId).getStreams();
-        List<Streamer> selectedStreamers = new ArrayList<>();
+        List<Integer> selectedStreamers = new ArrayList<>();
 
         for (Integer streamId : userStreams) {
             Stream stream = getStream(streamId);
@@ -138,7 +143,7 @@ public class Database {
 
             if (selectedStreamers.contains(streamer)) continue;
 
-            selectedStreamers.add(streamer);
+            selectedStreamers.add(streamer.getId());
         }
 
         return selectedStreamers;

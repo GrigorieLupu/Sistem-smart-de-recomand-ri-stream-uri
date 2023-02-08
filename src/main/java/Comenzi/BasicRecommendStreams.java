@@ -19,25 +19,25 @@ public class BasicRecommendStreams implements Command {
     @Override
     public void execute() {
         Database db = Database.getInstance();
-        List<Streamer> listenedStreamers = db.selectListenedStreamers(userId);
+        List<Integer> listenedStreamers = db.selectListenedStreamers(userId);
         List<Integer> userStreams = db.getUser(userId).getStreams();
-//      List<Stream> selectedStreams = db.selectUserStreams(listenedStreamers, userId, streamType, false);
-        List<StreamInfo> selectedStreams = new ArrayList<>();
+//        List<StreamInfo> selectedStreams = new ArrayList<>();
+        List<StreamInfo> selectedStreams = db.selectUserStreams(listenedStreamers, userId, streamType, false);
 
-        for (Streamer streamer: listenedStreamers) {
-            List<Stream> streamerStreams = db.getStreamerStreams(streamer.getId());
-            for (Stream stream: streamerStreams) {
-                if (stream.getStreamType() == streamType && !userStreams.contains(stream.getId())) {
-                    selectedStreams.add(new StreamInfo(streamer, stream));
-                }
-            }
-        }
+//        for (Integer streamerId: listenedStreamers) {
+//            List<Stream> streamerStreams = db.getStreamerStreams(streamerId);
+//            for (Stream stream: streamerStreams) {
+//                if (stream.getStreamType() == streamType && !listenedStreamers.contains(stream.getId())) {
+//                    selectedStreams.add(new StreamInfo(db.getStreamer(streamerId), stream));
+//                }
+//            }
+//        }
 
         // sortarea informatiilor despre un stream
         selectedStreams.sort(Comparator.comparingLong(s -> -s.getStream().getNoOfStreams()));
 
         // afisarea in format json a streamurilor
         int nrOfSelectedStreams = Math.min(5, selectedStreams.size());
-        Utils.listJson(selectedStreams.subList(0, nrOfSelectedStreams));
+        System.out.println(Utils.listJson(selectedStreams.subList(0, nrOfSelectedStreams)));
     }
 }
