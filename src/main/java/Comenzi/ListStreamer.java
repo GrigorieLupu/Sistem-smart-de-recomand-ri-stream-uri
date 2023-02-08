@@ -6,6 +6,9 @@ import Informatii.Streamer;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Implementarea Strategy pentru listarea streamurilor
+ */
 public class ListStreamer extends ListAlghorithm {
     @Override
     public void list(int id) {

@@ -1,5 +1,8 @@
 package Informatii;
 
+/**
+    * Aici am folosit Builder ca Design Pattern deoarece am avut nevoie de un constructor cu foarte multe parametrii
+ */
 public class Stream {
     private int streamType;
     private int id;
@@ -33,9 +36,6 @@ public class Stream {
         return id;
     }
 
-    public int getStreamGenre() {
-        return streamGenre;
-    }
 
     public long getNoOfStreams() {
         return noOfStreams;

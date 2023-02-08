@@ -22,12 +22,15 @@ public class AddStream implements Command {
         this.name = Utils.joinStrings(6, parts.length, parts);
     }
 
+
+
     @Override
     public void execute() {
         Database database = Database.getInstance();
         LocalDate date = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
+        // builder pattern
         database.add(new Stream.Builder()
                 .id(streamId)
                 .streamType(streamType)

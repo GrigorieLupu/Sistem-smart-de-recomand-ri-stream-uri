@@ -3,6 +3,9 @@ package Comenzi;
 import Informatii.Streamer;
 import Informatii.User;
 
+/**
+ * Aici folosesc in principiu Strategy pattern
+ */
 public class ListStreams implements Command {
     private final int id;
 
@@ -16,6 +19,7 @@ public class ListStreams implements Command {
         User user = Database.getInstance().getUser(id);
         Streamer streamer = Database.getInstance().getStreamer(id);
 
+        // aici verific propriu-zis pentru cine trebuie sa afisez streamurile
         if (user != null) {
             listAlghorithm = new ListUser();
         } else if (streamer != null) {

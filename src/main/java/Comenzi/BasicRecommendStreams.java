@@ -7,6 +7,10 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * Clasa BasicRecommendStreams implementeaza interfata Command si implementeaza algorithmul de recomandare
+ * pentru cele 5 streamuri dupa preferinte din streamerii ascultati de user
+ */
 public class BasicRecommendStreams implements Command {
     private final int userId;
     private final int streamType;
@@ -21,17 +25,7 @@ public class BasicRecommendStreams implements Command {
         Database db = Database.getInstance();
         List<Integer> listenedStreamers = db.selectListenedStreamers(userId);
         List<Integer> userStreams = db.getUser(userId).getStreams();
-//        List<StreamInfo> selectedStreams = new ArrayList<>();
         List<StreamInfo> selectedStreams = db.selectUserStreams(listenedStreamers, userId, streamType, false);
-
-//        for (Integer streamerId: listenedStreamers) {
-//            List<Stream> streamerStreams = db.getStreamerStreams(streamerId);
-//            for (Stream stream: streamerStreams) {
-//                if (stream.getStreamType() == streamType && !listenedStreamers.contains(stream.getId())) {
-//                    selectedStreams.add(new StreamInfo(db.getStreamer(streamerId), stream));
-//                }
-//            }
-//        }
 
         // sortarea informatiilor despre un stream
         selectedStreams.sort(Comparator.comparingLong(s -> -s.getStream().getNoOfStreams()));

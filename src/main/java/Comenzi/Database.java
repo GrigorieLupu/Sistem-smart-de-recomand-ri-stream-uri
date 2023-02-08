@@ -5,6 +5,9 @@ import Informatii.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Realizeaza interactiunea cu datele din aplicatie
+ */
 public class Database {
     public static Database instance = null;
     private List<Streamer> streamers;
@@ -36,6 +39,7 @@ public class Database {
         users.add(user);
     }
 
+    // Sterge un stream din aplicatie
     public void delete(int streamerId, int streamId) {
         for (int i = 0; i < streams.size(); i++) {
             Stream currentStream = streams.get(i);
@@ -73,6 +77,7 @@ public class Database {
         return null;
     }
 
+    // Returneaza toate streamurile unui streamer
     public List<Stream> getStreamerStreams(int id) {
         List<Stream> streamerStreams = new ArrayList<>();
         for (Stream stream : streams) {
@@ -83,6 +88,7 @@ public class Database {
         return streamerStreams;
     }
 
+    // Returneaza toate streamurile unui user
     public List<Stream> getUserStreams(int id) {
         List<Stream> userStreams = new ArrayList<>();
         for (Integer streamId : getUser(id).getStreams()) {
@@ -95,28 +101,11 @@ public class Database {
         return streams;
     }
 
-    public List<Streamer> getStreamers() {
-        return streamers;
-    }
-
-    public List<Integer> selectStreamerIds(List<Integer> streamIds) {
-        List<Integer> restult = new ArrayList<>();
-
-        for (Integer streamId: streamIds) {
-            for (Stream stream: streams) {
-                if (stream.getId() == streamId) {
-                    restult.add(stream.getStreamerId());
-                }
-            }
-        }
-
-        return restult;
-    }
-
+    // Se foloseste la recomandari pentru a selecta eligibile pentru a fi recomandate
     public List<StreamInfo> selectUserStreams(List<Integer> listenedStreamerIds, int userId, int streamType, boolean listened) {
         List<StreamInfo> selectedStreams = new ArrayList<>();
         List<Integer> userStreams = getUser(userId).getStreams();
-        // select streams based on whether they are listened or not
+        // selecteaza streamurile in functie de au fost sau nu ascultate
         for (Stream stream : streams) {
             boolean condition = listened == userStreams.contains(stream.getId());
             if (streamType == stream.getStreamType() && condition && listenedStreamerIds.contains(stream.getStreamerId())) {
@@ -125,14 +114,14 @@ public class Database {
             }
         }
 
-        // sort the selected streams based on the number of streams
+        // sorteaza streamurile selectate în funcție de numărul de streamuri
         selectedStreams.sort((s1, s2) ->
                 Long.compare(s2.getStream().getNoOfStreams(), s1.getStream().getNoOfStreams()));
 
-        // select the top 5 streams
         return selectedStreams.subList(0, Math.min(5, selectedStreams.size()));
     }
 
+    // Selecteaza streamerii pe baza streamurilor ascultate de user
     public List<Integer> selectListenedStreamers(int userId) {
         List<Integer> userStreams = getUser(userId).getStreams();
         List<Integer> selectedStreamers = new ArrayList<>();
@@ -147,19 +136,6 @@ public class Database {
         }
 
         return selectedStreamers;
-    }
-    private boolean isStreamer(int id) {
-        for (Streamer streamer : streamers) {
-            if (streamer.getId() == id) return true;
-        }
-        return false;
-    }
-
-    private boolean isUser(int id) {
-        for (User user : users) {
-            if (user.getId() == id) return true;
-        }
-        return false;
     }
 
     public void clear() {

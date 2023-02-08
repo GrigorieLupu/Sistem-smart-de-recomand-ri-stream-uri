@@ -55,6 +55,7 @@ public class Utils {
         }
     }
 
+    // pentru cazurile de exceptie
     public static String joinStrings(int start, int end, String[] parts) {
         return String.join(" ", Arrays.copyOfRange(parts, start, end));
     }
@@ -68,6 +69,7 @@ public class Utils {
         return sdf.format(date);
     }
 
+    // prelucrez lungimea in secunde in formatul HH:MM:SS
     public static String getLengthString(long seconds) {
         int m, h, sec;
         h = (int) (seconds / 3600);
@@ -83,6 +85,7 @@ public class Utils {
         }
     }
 
+    // citesc din fisierul csv
     public static List<String[]> getCsvLine(String filename) {
         try {
             CSVReader reader = new CSVReaderBuilder(new FileReader(filename)).withSkipLines(1).build();

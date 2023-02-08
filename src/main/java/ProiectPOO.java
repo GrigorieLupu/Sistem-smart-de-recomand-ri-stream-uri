@@ -27,10 +27,11 @@ public class ProiectPOO {
         try (BufferedReader br = new BufferedReader(new FileReader(resourcesRoot + args[3]))) {
             String line;
             while ((line = br.readLine()) != null) {
-//                proiectPOO.processCommand(line);
                 String[] parts = line.split(" ");
 
-                switch (parts[1]) { // Command type
+                //adaugare in lista de comenzi a obiectului commandSystem
+
+                switch (parts[1]) {
                     case "ADD":
                         commandSystem.addCommand(new AddStream(parts));
                         break;
@@ -69,6 +70,8 @@ public class ProiectPOO {
         CommandSystem.getInstance().clear();
     }
 
+    //iau informatiile din fiserul Streamers.csv
+
     private void parseStreamers(String directory) {
         String filePath = resourcesRoot + directory;
         for (String[] values : Utils.getCsvLine(filePath)) {
@@ -80,6 +83,8 @@ public class ProiectPOO {
             Database.getInstance().add(streamer);
         }
     }
+
+    //iau informatiile din fiserul Streams.csv
 
     private void parseStreams(String directory) {
 
@@ -108,6 +113,8 @@ public class ProiectPOO {
             Database.getInstance().add(stream);
         }
     }
+
+    //iau informatiile din fiserul Users.csv
 
     private void parseUsers(String directory) {
         String filePath = resourcesRoot + directory;

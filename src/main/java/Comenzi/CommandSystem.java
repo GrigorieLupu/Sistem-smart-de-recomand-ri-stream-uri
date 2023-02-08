@@ -21,10 +21,13 @@ public class CommandSystem {
         instance = null;
     }
 
+    // bag o comanda noua in executorul de comenzi
+
     public void addCommand(Command command) {
         commands.add(command);
     }
 
+    // executa toate comenzile din lista
     public void execute() {
         for (Command command: commands) {
             command.execute();
