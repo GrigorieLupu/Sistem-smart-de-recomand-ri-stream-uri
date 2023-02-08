@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Tests" tests="16" skipped="0" failures="1" errors="0" timestamp="2023-02-08T20:04:48" hostname="GRIGORIE" time="0.232">
+<testsuite name="Tests" tests="16" skipped="0" failures="1" errors="0" timestamp="2023-02-08T20:25:45" hostname="GRIGORIE" time="0.238">
   <properties/>
-  <testcase name="test2AddStream()" classname="Tests" time="0.11"/>
-  <testcase name="test12RecommendStreamAudiobook()" classname="Tests" time="0.007"/>
+  <testcase name="test2AddStream()" classname="Tests" time="0.114"/>
+  <testcase name="test12RecommendStreamAudiobook()" classname="Tests" time="0.008"/>
   <testcase name="testTheTest()" classname="Tests" time="0.001"/>
   <testcase name="test3DeleteStream()" classname="Tests" time="0.006"/>
   <testcase name="test15MixedActions()" classname="Tests" time="0.009"/>
-  <testcase name="test8ListAudiobooksByAuthor()" classname="Tests" time="0.033"/>
-  <testcase name="test6SurpriseSongs()" classname="Tests" time="0.009">
+  <testcase name="test8ListAudiobooksByAuthor()" classname="Tests" time="0.034"/>
+  <testcase name="test6SurpriseSongs()" classname="Tests" time="0.008">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;[{&quot;id&quot;:&quot;53873&quot;,&quot;name&quot;:&quot;shape of you&quot;,&quot;streamername&quot;:&quot;ed sheeran&quot;,&quot;nooflistenings&quot;:&quot;294&quot;,&quot;length&quot;:&quot;01:36&quot;,&quot;dateadded&quot;:&quot;22-11-2017&quot;},{&quot;id&quot;:&quot;24015&quot;,&quot;name&quot;:&quot;waves - robin schulz edit&quot;,&quot;streamername&quot;:&quot;mr. probz&quot;,&quot;nooflistenings&quot;:&quot;907&quot;,&quot;length&quot;:&quot;02:01&quot;,&quot;dateadded&quot;:&quot;27-10-2015&quot;},{&quot;id&quot;:&quot;24013&quot;,&quot;name&quot;:&quot;waves - robin schulz radio edit&quot;,&quot;streamername&quot;:&quot;mr. probz&quot;,&quot;nooflistenings&quot;:&quot;868&quot;,&quot;length&quot;:&quot;02:00&quot;,&quot;dateadded&quot;:&quot;27-10-2015&quot;}]&gt; but was: &lt;[{&quot;id&quot;:&quot;14095&quot;,&quot;name&quot;:&quot;nine&quot;,&quot;streamername&quot;:&quot;alan walker&quot;,&quot;nooflistenings&quot;:&quot;1000&quot;,&quot;length&quot;:&quot;02:10&quot;,&quot;dateadded&quot;:&quot;21-01-2017&quot;},{&quot;id&quot;:&quot;43234&quot;,&quot;name&quot;:&quot;taki taki (feat. selena gomez, ozuna &amp; cardi b)&quot;,&quot;streamername&quot;:&quot;dj snake&quot;,&quot;nooflistenings&quot;:&quot;932&quot;,&quot;length&quot;:&quot;01:36&quot;,&quot;dateadded&quot;:&quot;02-10-2019&quot;}]&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;[{&quot;id&quot;:&quot;53873&quot;,&quot;name&quot;:&quot;shape of you&quot;,&quot;streamername&quot;:&quot;ed sheeran&quot;,&quot;nooflistenings&quot;:&quot;294&quot;,&quot;length&quot;:&quot;01:36&quot;,&quot;dateadded&quot;:&quot;22-11-2017&quot;},{&quot;id&quot;:&quot;24015&quot;,&quot;name&quot;:&quot;waves - robin schulz edit&quot;,&quot;streamername&quot;:&quot;mr. probz&quot;,&quot;nooflistenings&quot;:&quot;907&quot;,&quot;length&quot;:&quot;02:01&quot;,&quot;dateadded&quot;:&quot;27-10-2015&quot;},{&quot;id&quot;:&quot;24013&quot;,&quot;name&quot;:&quot;waves - robin schulz radio edit&quot;,&quot;streamername&quot;:&quot;mr. probz&quot;,&quot;nooflistenings&quot;:&quot;868&quot;,&quot;length&quot;:&quot;02:00&quot;,&quot;dateadded&quot;:&quot;27-10-2015&quot;}]&gt; but was: &lt;[{&quot;id&quot;:&quot;14095&quot;,&quot;name&quot;:&quot;nine&quot;,&quot;streamername&quot;:&quot;alan walker&quot;,&quot;nooflistenings&quot;:&quot;1000&quot;,&quot;length&quot;:&quot;02:10&quot;,&quot;dateadded&quot;:&quot;21-01-2017&quot;},{&quot;id&quot;:&quot;43234&quot;,&quot;name&quot;:&quot;taki taki (feat. selena gomez, ozuna &amp; cardi b)&quot;,&quot;streamername&quot;:&quot;dj snake&quot;,&quot;nooflistenings&quot;:&quot;932&quot;,&quot;length&quot;:&quot;01:36&quot;,&quot;dateadded&quot;:&quot;02-10-2019&quot;}]&gt;
 	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at app//org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
@@ -103,14 +103,14 @@
 </failure>
   </testcase>
   <testcase name="test11RecommendStreamPodcast()" classname="Tests" time="0.003"/>
-  <testcase name="test1ListSongsFromArtists()" classname="Tests" time="0.004"/>
-  <testcase name="test10AddMultipleStreams()" classname="Tests" time="0.005"/>
+  <testcase name="test1ListSongsFromArtists()" classname="Tests" time="0.003"/>
+  <testcase name="test10AddMultipleStreams()" classname="Tests" time="0.004"/>
   <testcase name="test13MultipleSurpriseStreamRecommendation()" classname="Tests" time="0.004"/>
-  <testcase name="test7ListPodcastsByPodcastAuthor()" classname="Tests" time="0.006"/>
-  <testcase name="test4ListenToStream()" classname="Tests" time="0.008"/>
+  <testcase name="test7ListPodcastsByPodcastAuthor()" classname="Tests" time="0.005"/>
+  <testcase name="test4ListenToStream()" classname="Tests" time="0.01"/>
   <testcase name="test9ListUsersMultipleStreams()" classname="Tests" time="0.007"/>
-  <testcase name="test14AddAndRecommendPodcasts()" classname="Tests" time="0.007"/>
-  <testcase name="test5RecommendSongs()" classname="Tests" time="0.005"/>
+  <testcase name="test14AddAndRecommendPodcasts()" classname="Tests" time="0.008"/>
+  <testcase name="test5RecommendSongs()" classname="Tests" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
