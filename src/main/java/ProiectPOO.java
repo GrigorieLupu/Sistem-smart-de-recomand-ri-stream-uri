@@ -52,7 +52,7 @@ public class ProiectPOO {
                         break;
 
                     case "SURPRISE":
-                        //commandSystem.addCommand(new SurpriseRecommendStreams(parts));
+                        commandSystem.addCommand(new SurpriseRecommendStreams(parts));
                         break;
 
                     default:
