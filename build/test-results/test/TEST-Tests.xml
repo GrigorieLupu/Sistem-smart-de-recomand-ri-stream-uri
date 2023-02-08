@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Tests" tests="16" skipped="0" failures="7" errors="0" timestamp="2023-02-08T13:21:39" hostname="grigorie-ROG-Zephyrus-S15-GX502LWS-GX502LWS" time="0.132">
+<testsuite name="Tests" tests="16" skipped="0" failures="7" errors="0" timestamp="2023-02-08T13:37:34" hostname="grigorie-ROG-Zephyrus-S15-GX502LWS-GX502LWS" time="0.13">
   <properties/>
-  <testcase name="test2AddStream()" classname="Tests" time="0.047"/>
+  <testcase name="test2AddStream()" classname="Tests" time="0.052"/>
   <testcase name="test12RecommendStreamAudiobook()" classname="Tests" time="0.005">
     <failure message="org.opentest4j.AssertionFailedError" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError
 	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:35)
@@ -94,9 +94,9 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testTheTest()" classname="Tests" time="0.0"/>
+  <testcase name="testTheTest()" classname="Tests" time="0.001"/>
   <testcase name="test3DeleteStream()" classname="Tests" time="0.005"/>
-  <testcase name="test15MixedActions()" classname="Tests" time="0.007">
+  <testcase name="test15MixedActions()" classname="Tests" time="0.005">
     <failure message="org.opentest4j.AssertionFailedError" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError
 	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:35)
 	at app//org.junit.jupiter.api.Assertions.fail(Assertions.java:115)
@@ -188,7 +188,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="test8ListAudiobooksByAuthor()" classname="Tests" time="0.019"/>
+  <testcase name="test8ListAudiobooksByAuthor()" classname="Tests" time="0.018"/>
   <testcase name="test6SurpriseSongs()" classname="Tests" time="0.003">
     <failure message="org.opentest4j.AssertionFailedError" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError
 	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:35)
@@ -373,9 +373,9 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="test1ListSongsFromArtists()" classname="Tests" time="0.004"/>
-  <testcase name="test10AddMultipleStreams()" classname="Tests" time="0.005"/>
-  <testcase name="test13MultipleSurpriseStreamRecommendation()" classname="Tests" time="0.001">
+  <testcase name="test1ListSongsFromArtists()" classname="Tests" time="0.003"/>
+  <testcase name="test10AddMultipleStreams()" classname="Tests" time="0.004"/>
+  <testcase name="test13MultipleSurpriseStreamRecommendation()" classname="Tests" time="0.002">
     <failure message="org.opentest4j.AssertionFailedError" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError
 	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:35)
 	at app//org.junit.jupiter.api.Assertions.fail(Assertions.java:115)
@@ -468,7 +468,7 @@
 </failure>
   </testcase>
   <testcase name="test7ListPodcastsByPodcastAuthor()" classname="Tests" time="0.005"/>
-  <testcase name="test4ListenToStream()" classname="Tests" time="0.008"/>
+  <testcase name="test4ListenToStream()" classname="Tests" time="0.006"/>
   <testcase name="test9ListUsersMultipleStreams()" classname="Tests" time="0.004"/>
   <testcase name="test14AddAndRecommendPodcasts()" classname="Tests" time="0.004">
     <failure message="org.opentest4j.AssertionFailedError" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError
